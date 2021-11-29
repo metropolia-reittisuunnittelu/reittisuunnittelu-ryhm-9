@@ -34,7 +34,7 @@ jobs:
 
   MatiasDeployment:
     runs-on: ubuntu-20.04
-    name: EricDeployment
+    name: MatiasDeployment
     environment: deployment-matias
     env:
       VITE_BASE: ~${{ secrets.SSH_USERNAME }}/reittisuunnittelu
@@ -61,7 +61,7 @@ jobs:
 
   MikaDeployment:
     runs-on: ubuntu-20.04
-    name: EricDeployment
+    name: MikaDeployment
     environment: deployment-mika
     env:
       VITE_BASE: ~${{ secrets.SSH_USERNAME }}/reittisuunnittelu
