@@ -1,6 +1,7 @@
 import './style.css'
 import 'leaflet';
 import { map, tileLayer } from 'leaflet';
+import './reitti';
 
 const leafletMap = map('map').setView([ 60.192059, 24.945831 ], 13);
 
@@ -37,4 +38,4 @@ L.control.layers({
     "High-density": hdTiles
 }, null, {
     collapsed: false
-}).addTo(map);
+}).addTo(leafletMap);

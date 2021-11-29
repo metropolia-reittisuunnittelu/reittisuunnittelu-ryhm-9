@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <div id="map" style="height:280px; width:500px;"></div>
+</head>
+<body>
+<div id="app"></div>
+<div id="map" style="height:280px; width:500px;"></div>
+<h1> Reittitestausta </h1>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+<div style="display: flex; flex-direction: column;">
+    <label>From: <input id="from" type="text"/></label>
+    <label>To: <input id="to" type="text"/></label>
+    <button id="get-routes-button" onclick="getRoutes()">Hae</button>
+</div>
+
+<script src="./main.js" type="module"></script>
+</body>
 </html>
