@@ -7,5 +7,15 @@ export default defineConfig({
     },
     server: {
         open: true
+    },
+    resolve: {
+        alias: [
+            {
+                find: /^~.+/,
+                replacement: (val) => {
+                    return val.replace(/^~/, "");
+                },
+            },
+        ]
     }
 })

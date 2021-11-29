@@ -7,10 +7,12 @@
     "serve": "vite preview"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.7.6",
     "vite": "^2.6.4"
   },
   "dependencies": {
     "graphql": "^16.0.1",
-    "graphql-request": "^3.6.1"
+    "graphql-request": "^3.6.1",
+    "leaflet": "^1.7.1"
   }
 }
