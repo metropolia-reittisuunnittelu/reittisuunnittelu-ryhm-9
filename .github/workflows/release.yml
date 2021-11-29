@@ -44,4 +44,7 @@ jobs:
           name: built-project-artifact
 
       - name: Deploy
-        run: sshpass -o StrictHostKeyChecking=no -p "${{ secrets.SSH_PASSWORD }}" rsync -a --progress --delete ./dist/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/reittisuunnittelu
+        run: |
+        echo "Host *" > config
+        echo "  StrictHostKeyChecking no" >> config
+        sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -a --progress --delete ./dist/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/reittisuunnittelu
