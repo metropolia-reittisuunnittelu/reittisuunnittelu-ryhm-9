@@ -5,9 +5,12 @@ on:
     branches:
       - main
 jobs:
-  InstallAndBuild:
-    name: InstallAndBuild
+  EricDeployment:
     runs-on: ubuntu-20.04
+    name: EricDeployment
+    environment: deployment-eric
+    env:
+      VITE_BASE: ~${{ secrets.SSH_USERNAME }}/reittisuunnittelu
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,26 +26,6 @@ jobs:
 
       - name: Build Project
         run: npm run build
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: built-project-artifact
-          path: ./dist
-
-  EricDeployment:
-    runs-on: ubuntu-20.04
-    name: EricDeployment
-    needs:
-      - InstallAndBuild
-    environment: deployment-eric
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: built-project-artifact
-          path: ./dist
 
       - name: Deploy
         run: |
