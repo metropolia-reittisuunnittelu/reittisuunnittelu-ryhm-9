@@ -42,9 +42,9 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: built-project-artifact
+          path: ./dist
 
       - name: Deploy
         run: |
-          echo "Host *" > config
-          echo "  StrictHostKeyChecking no" >> config
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh "mkdir -p ~/public_html/reittisuunnittelu"
           sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -e "ssh -o StrictHostKeyChecking=no" -a --progress --delete ./dist/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/reittisuunnittelu
