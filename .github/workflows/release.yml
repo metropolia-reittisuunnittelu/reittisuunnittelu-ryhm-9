@@ -19,10 +19,10 @@ jobs:
           cache: 'npm'
 
       - name: InstallDependencies
-        uses: npm install
+        run: npm install
 
       - name: Build Project
-        uses: npm run build
+        run: npm run build
 
       - uses: actions/upload-artifact@v2
         with:
@@ -44,4 +44,4 @@ jobs:
           name: built-project-artifact
 
       - name: Deploy
-        uses: sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -a --progress --delete ./dist/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/reittisuunnittelu
+        run: sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -a --progress --delete ./dist/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/reittisuunnittelu
