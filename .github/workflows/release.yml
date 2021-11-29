@@ -46,5 +46,5 @@ jobs:
 
       - name: Deploy
         run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi "mkdir -p ~/public_html/reittisuunnittelu"
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi "mkdir -p ~/public_html/reittisuunnittelu"
           sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -e "ssh -o StrictHostKeyChecking=no" -a --progress --delete ./dist/ ${{ secrets.SSH_USERNAME }}@edunix.metropolia.fi:~/public_html/reittisuunnittelu
