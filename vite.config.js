@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 
+const VITE_BASE = process.env.VITE_BASE || '';
+
 export default defineConfig({
     root: './src/',
     build: {
@@ -8,6 +10,7 @@ export default defineConfig({
     server: {
         open: true
     },
+    base: VITE_BASE,
     resolve: {
         alias: [
             {
