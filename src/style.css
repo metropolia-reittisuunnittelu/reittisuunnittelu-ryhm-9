@@ -1,10 +1,24 @@
 @import "~leaflet/dist/leaflet.css";
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#map {
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+.map-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10000;
 }

@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8"/>
     <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Vite App</title>
 </head>
 <body>
-<div id="app"></div>
 <div id="map" style="height:280px; width:500px;"></div>
-<h1> Reittitestausta </h1>
 
-<div style="display: flex; flex-direction: column;">
-    <label>From: <input id="from" type="text"/></label>
-    <label>To: <input id="to" type="text"/></label>
-    <button id="get-routes-button" onclick="getRoutes()">Hae</button>
+<div class="map-overlay">
+
+    <h1> Reittitestausta </h1>
+
+    <button id="get-location-button">My location</button>
+
+    <div style="display: flex; flex-direction: column;">
+        <label>From: <input id="from" type="text"/></label>
+        <label>To: <input id="to" type="text"/></label>
+        <button id="get-routes-button">Hae</button>
+        <span class="material-icons"> directions_bus </span>
+    </div>
 </div>
 
 <script src="./main.js" type="module"></script>
+
 </body>
 </html>

@@ -2,7 +2,9 @@ const apiRoot = 'https://api.digitransit.fi/routing/v1/routers/hsl';
 
 document.getElementById('get-routes-button').onclick = async () => {
     const from = document.getElementById("from").value;
+
     const to = document.getElementById("to").value;
+    
     console.log('params', { from, to })
 
     try {

@@ -1,4 +1,4 @@
-import { alert } from './alert/alert';
+import { alert } from './utilities/alert/alert';
 
 function getLocation() {
     console.log('getLocation')
