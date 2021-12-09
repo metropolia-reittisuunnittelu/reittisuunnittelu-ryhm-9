@@ -2,17 +2,10 @@
   "name": "reittisuunnittelu",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "start": "npx reload -b -p 3000 -d './src' -e '.'"
   },
-  "devDependencies": {
-    "@types/leaflet": "^1.7.6",
-    "vite": "^2.6.4"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "graphql": "^16.0.1",
-    "graphql-request": "^3.6.1",
-    "leaflet": "^1.7.1"
+    "reload": "^3.2.0"
   }
 }
