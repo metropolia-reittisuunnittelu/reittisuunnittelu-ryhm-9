@@ -1,25 +1,20 @@
-import './style.css'
-import 'leaflet';
-import { control, divIcon, marker } from 'leaflet';
-import './reitti';
-import './location';
-import { leafletMap } from "./map/map";
-import { hdTiles, normalTiles, swedish } from "./map/layers";
+import { initMap } from "./map/map-instance.js";
+import { initGetRoutesForm } from "./journey/form.js";
+import { initMapBusStops } from "./bus-stops/map-bus-stops.js";
+
+console.log('Application Started');
+console.log('Initializing');
+
+//  Initializing Map.
+initMap();
 
 
-control.layers({
-    "Normal": normalTiles,
-    "Swedish": swedish,
-    "High-density": hdTiles
-}, null, {
-    collapsed: false
-}).addTo(leafletMap);
+//  Initializing Bus stops.
+initMapBusStops();
 
-// const markerInstance = marker([ 60.192059, 24.945831 ]);
-// markerInstance.addTo(leafletMap)
 
-const busStationIcon = divIcon({ className: 'material-icons', html: 'directions_bus' });
+//  Initializing GetRoutes form.
+initGetRoutesForm();
 
-const busStationMarker = marker([ 60.192059, 24.945831 ], { icon: busStationIcon });
+console.log('Initialization finished.');
 
-busStationMarker.addTo(leafletMap);

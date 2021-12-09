@@ -1,5 +1,3 @@
-import './alert.css';
-
 export function alert(message) {
     const alertOverlay = document.createElement('div');
     alertOverlay.classList.add('alert-overlay');

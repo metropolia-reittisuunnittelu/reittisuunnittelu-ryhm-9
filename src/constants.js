@@ -1,4 +1,14 @@
-export const MAP_ELEMENT_ID = 'map';
-export const MAP_ELEMENT_NORMAL_TILES_ID = 'hsl-map';
-export const MAP_ELEMENT_SWIDISH_TILES_ID = 'hsl-map-sv';
-export const MAP_ELEMENT_HIGH_DENSITY_TILES_ID = 'hsl-map';
+//  Here is all the ids we use in javascript witch should be in sync with html.
+
+export const mapIds = {
+    mainMap: 'app-map',
+    normalTiles: 'hsl-map',
+    swidishTiles: 'hsl-map-sv',
+    highDensityTiles: 'hsl-map'
+}
+
+export const getRoutesFormIds = {
+    submitButton: 'get-routes-submit-button',
+    from: 'get-routes-from-input',
+    to: 'get-routes-to-input'
+};

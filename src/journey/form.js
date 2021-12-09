@@ -1,13 +1,22 @@
+import { getRoutesFormIds } from "../constants.js";
+
+//  TODO: move to endpoints directory
 const apiRoot = 'https://api.digitransit.fi/routing/v1/routers/hsl';
 
-document.getElementById('get-routes-button').onclick = async () => {
-    const from = document.getElementById("from").value;
+//  TODO: set some validation when inputs are empty
+//  TODO: We have an api for auto completion, would be great to use that.
+//  TODO: Let's use Alert popup when Error happened.
+async function onGetRoutesButtonClick() {
 
-    const to = document.getElementById("to").value;
-    
+    const from = document.getElementById(getRoutesFormIds.from).value;
+
+    const to = document.getElementById(getRoutesFormIds.to).value;
+
     console.log('params', { from, to })
 
     try {
+
+        //  TODO: move this fetch to endpoints directory. @see ./endpoints/get-bus-stops.js
         const response = await fetch(`${ apiRoot }/index/graphql`, {
             method: 'POST',
             headers: {
@@ -30,4 +39,9 @@ document.getElementById('get-routes-button').onclick = async () => {
     } catch (e) {
         console.error('Failed to fetch routes', e);
     }
-};
+}
+
+
+export function initGetRoutesForm() {
+    document.getElementById(getRoutesFormIds.submitButton).onclick = onGetRoutesButtonClick;
+}

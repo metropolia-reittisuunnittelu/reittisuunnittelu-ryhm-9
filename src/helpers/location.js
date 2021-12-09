@@ -1,5 +1,6 @@
-import { alert } from './utilities/alert/alert';
+import { alert } from '../utilities/alert/alert';
 
+//  TODO: needs refactoring
 function getLocation() {
     console.log('getLocation')
     if (navigator.geolocation) {
