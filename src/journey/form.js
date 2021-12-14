@@ -6,8 +6,7 @@ const apiRoot = 'https://api.digitransit.fi/routing/v1/routers/hsl';
 //  TODO: set some validation when inputs are empty
 //  TODO: We have an api for auto completion, would be great to use that.
 //  TODO: Let's use Alert popup when Error happened.
-async function onGetRoutesButtonClick() {
-
+async function onGetRoutesButtonClick(event) {
     const from = document.getElementById(getRoutesFormIds.from).value;
 
     const to = document.getElementById(getRoutesFormIds.to).value;
@@ -43,5 +42,10 @@ async function onGetRoutesButtonClick() {
 
 
 export function initGetRoutesForm() {
-    document.getElementById(getRoutesFormIds.submitButton).onclick = onGetRoutesButtonClick;
+    document.getElementById(getRoutesFormIds.form).onsubmit = (event) => {
+        event.preventDefault();
+        onGetRoutesButtonClick(event)
+            .catch(err => console.error(`${ getRoutesFormIds.form } onsubmit error: `, err));
+
+    };
 }

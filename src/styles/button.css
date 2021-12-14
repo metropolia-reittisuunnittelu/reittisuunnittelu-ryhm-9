@@ -1,0 +1,30 @@
+.primary-button {
+    background: var(--primary-300);
+    color: var(--primary-50);
+    margin: 0;
+    border-radius: 25px;
+    padding: 0.7rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s all;
+    border: 2px solid transparent;
+}
+
+.primary-button > .material-icons {
+    color: var(--primary-50);
+}
+
+.primary-button:hover {
+    background-color: var(--primary-500);
+}
+
+.primary-button:active {
+    background-color: var(--primary-600);
+}
+
+.primary-button:focus-visible {
+    background-color: var(--primary-600);
+    outline: none;
+}

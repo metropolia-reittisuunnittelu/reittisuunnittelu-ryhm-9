@@ -8,10 +8,20 @@
     <title>Reittisuunnittelu</title>
 
     <!--    Application's Icon    -->
-    <link href="images/favicon.svg" rel="icon" type="image/svg+xml"/>
+    <link href="images/logo-solid.png" rel="icon" type="image/svg+xml"/>
 
     <!--    Material Icons    -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--    Custom font    -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+
+    <!--    Custom font    -->
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+
+    <!--    Custom font    -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
+
 
     <!--    Leaflet dependencies    -->
     <link crossorigin="" href="dependencies/leaflet/leaflet.css" rel="stylesheet"/>
@@ -27,23 +37,119 @@
 </head>
 <body>
 
-<!--    Map entrypoint    -->
-<div id="app-map"></div>
 
-<div class="map-overlay">
+<nav class="app-nav">
+    <img alt="Reittisuunnittelu" src="./images/logo.png">
+    <span>
+        Reittisuunnittelu
+    </span>
+</nav>
 
-    <h1> Reittitestausta </h1>
+<!--    intruduction entrypoint    -->
+<div class="app-introduction">
+    <div class="title center-horizontally">
+        <span>Anna meidän löytää sinulle paras reitti</span>
+    </div>
 
-    <button id="get-location-button">My location</button>
+    <div class="center-horizontally">
+        <button class="primary-button">
+            Take me to Route
+            <span class="material-icons">navigate_next</span>
+        </button>
+    </div>
 
-    <div style="display: flex; flex-direction: column;">
-        <label>From: <input id="get-routes-from-input" type="text"/></label>
-        <label>To: <input id="get-routes-to-input" type="text"/></label>
-        <button id="get-routes-submit-button">Hae</button>
-        <span class="material-icons"> directions_bus </span>
+    <div class="scroll-icon bounce">
+        <span class="material-icons"> keyboard_arrow_down </span>
     </div>
 </div>
 
+
+<!--    Video entrypoint    -->
+<div class="app-video">
+    <video controls>
+        <source src="./images/earth.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!--    Images entrypoint    -->
+<div class="app-images">
+    <div>
+        <img alt="test-image" src="images/train-1.jpg"/>
+    </div>
+    <div>
+        <img alt="test-image" src="images/train-2.jpg"/>
+    </div>
+    <div>
+        <img alt="test-image" src="images/train-3.jpg"/>
+    </div>
+</div>
+
+
+<!--    Map entrypoint    -->
+<div class="app-map">
+    <div class="app-map-map" id="app-map"></div>
+
+    <!--    Route search    -->
+    <div class="app-map-control">
+        <form class="app-map-search-route-form" id="app-map-search-route-form">
+            <div class="text-field">
+                <label for="get-routes-from-input">From: </label>
+                <input id="get-routes-from-input" type="text"/>
+            </div>
+
+            <div class="text-field">
+                <label for="get-routes-to-input">To: </label>
+                <input id="get-routes-to-input" type="text"/>
+            </div>
+
+            <button class="primary-button" id="get-lcation-button">
+                <span class="material-icons">share_location</span>
+            </button>
+
+            <button class="primary-button" id="get-routes-submit-button" type="submit">
+                <span class="material-icons">search</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<div class="app-footer">
+    <footer>
+        <div class="social">
+            <a href="#">
+                <i class="icon ion-social-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="icon ion-social-snapchat"></i>
+            </a>
+            <a href="#">
+                <i class="icon ion-social-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="icon ion-social-facebook"></i>
+            </a>
+        </div>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="#">Home</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Services</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Terms</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">Privacy Policy</a>
+            </li>
+        </ul>
+        <p class="copyright">Company Name © 2018</p>
+    </footer>
+</div>
 </body>
 
 </html>

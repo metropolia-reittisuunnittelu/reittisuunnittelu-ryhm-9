@@ -1,0 +1,4 @@
+.center-horizontally {
+    display: flex;
+    justify-content: center;
+}

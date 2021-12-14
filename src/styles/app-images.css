@@ -1,0 +1,17 @@
+.app-images {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-500);
+    display: flex;
+    gap: 5rem;
+    padding: 5rem 5rem;
+}
+
+.app-images > div {
+    flex: 1;
+    overflow: hidden;
+}
+
+.app-images > div > img {
+    max-height: 100%;
+}

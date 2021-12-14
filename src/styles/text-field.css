@@ -1,0 +1,31 @@
+.text-field {
+    color: var(--primary-700);
+    border-radius: 25px;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.text-field > input {
+    padding: 1rem;
+    border: 1px solid var(--primary-700);
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.text-field > label {
+    position: absolute;
+    top: -2rem;
+}
+
+.text-field > input:hover {
+    outline: none;
+    border: 1px solid var(--primary-300);
+}
+
+.text-field > input:focus-visible {
+    outline: none;
+    border: 1px solid var(--primary-500);
+}
