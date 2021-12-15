@@ -2,7 +2,7 @@
   "name": "reittisuunnittelu",
   "version": "0.0.0",
   "scripts": {
-    "start": "npx reload -b -p 3000 -d './src' -e '.'"
+    "start": "npx reload -b -p 3000 -d src -e '.'"
   },
   "devDependencies": {},
   "dependencies": {
