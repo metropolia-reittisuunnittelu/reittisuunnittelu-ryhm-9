@@ -11,5 +11,7 @@ export const getRoutesFormIds = {
     form: 'app-map-search-route-form',
     submitButton: 'get-routes-submit-button',
     from: 'get-routes-from-input',
-    to: 'get-routes-to-input'
+    fromDataList: 'get-routes-from-input-datalist',
+    to: 'get-routes-to-input',
+    toDataList: 'get-routes-to-input-datalist',
 };

@@ -95,12 +95,14 @@
         <form class="app-map-search-route-form" id="app-map-search-route-form">
             <div class="text-field">
                 <label for="get-routes-from-input">From: </label>
-                <input id="get-routes-from-input" type="text"/>
+                <input id="get-routes-from-input" list="get-routes-from-input-datalist" type="text"/>
+                <datalist id="get-routes-from-input-datalist"></datalist>
             </div>
 
             <div class="text-field">
                 <label for="get-routes-to-input">To: </label>
-                <input id="get-routes-to-input" type="text"/>
+                <input id="get-routes-to-input" list="get-routes-to-input-datalist" type="text"/>
+                <datalist id="get-routes-to-input-datalist"></datalist>
             </div>
 
             <button class="primary-button" id="get-lcation-button">

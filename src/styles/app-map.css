@@ -21,6 +21,7 @@
 
 .app-map-control > .app-map-search-route-form {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     padding: 1rem;
 }
