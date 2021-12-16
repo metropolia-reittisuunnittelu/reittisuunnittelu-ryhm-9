@@ -10,6 +10,7 @@
     cursor: pointer;
     transition: 0.3s all;
     border: 2px solid transparent;
+    text-decoration: none;
 }
 
 .primary-button > .material-icons {
