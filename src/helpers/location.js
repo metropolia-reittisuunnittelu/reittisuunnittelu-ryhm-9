@@ -2,7 +2,6 @@ import { alert } from '../utilities/alert/alert';
 
 //  TODO: needs refactoring
 function getLocation() {
-    console.log('getLocation')
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((showPosition) => {
             console.log(showPosition)
@@ -24,7 +23,6 @@ const getLocationButton = document.getElementById('get-location-button');
 console.log(getLocationButton);
 
 getLocationButton.onclick = async () => {
-    console.log('get-location-button')
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
