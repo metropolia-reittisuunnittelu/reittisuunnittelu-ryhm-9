@@ -6,7 +6,7 @@ import { getNameByCoordinatesEndpoint } from "../endpoints/get-name-by-coordinat
 export function getCurrentPosition() {
     return new Promise((resolve, reject) => {
         if (!navigator.geolocation) {
-            reject('Geolocation is not supported by this browser');
+            resolve(null);
             return;
         }
 
@@ -29,24 +29,34 @@ export function initGetLocationButton() {
     }
 
     getLocationButton.onclick = async () => {
-        if (!navigator.geolocation) {
-            console.log('Geolocation is not supported by this browser');
-            return;
+        try {
+            if (!navigator.geolocation) {
+                console.log('Geolocation is not supported by this browser');
+                return;
+            }
+
+            const data = await getCurrentPosition();
+
+            if (!data) {
+                return;
+            }
+
+            addPersonIconToMap([ data.coords.latitude, data.coords.longitude ]);
+
+            mapInstance.setView([ data.coords.latitude, data.coords.longitude ], 18);
+
+            const nameData = await getNameByCoordinatesEndpoint([ data.coords.latitude, data.coords.longitude ]);
+
+            const addressData = nameData.features[0].properties.label;
+
+            const from = document.getElementById(getRoutesFormIds.from);
+
+            from.value = addressData;
+
+        } catch (e) {
+            console.log('Error in onClick of: ', getRoutesFormIds.getLocationButton);
+            console.log(e);
         }
-
-        const data = await getCurrentPosition();
-
-        addPersonIconToMap([ data.coords.latitude, data.coords.longitude ]);
-
-        mapInstance.setView([ data.coords.latitude, data.coords.longitude ], 18);
-
-        const nameData = await getNameByCoordinatesEndpoint([ data.coords.latitude, data.coords.longitude ]);
-
-        const addressData = nameData.features[0].properties.label;
-
-        const from = document.getElementById(getRoutesFormIds.from);
-
-        from.value = addressData;
     };
 }
 
