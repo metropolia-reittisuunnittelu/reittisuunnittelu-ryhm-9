@@ -1,8 +1,8 @@
 import { initMap } from "./map/map-instance.js";
-import { initGetRoutesForm } from "./journey/form.js";
-import { initMapBusStops } from "./bus-stops/map-bus-stops.js";
+import { initGetRoutesForm } from "./journey/get-routes-form.js";
+import { initMapBusStops } from "./journey/map-bus-stops.js";
 import { initAddressAutoCompletion } from "./journey/address-auto-complete.js";
-import { initGetLocationButton } from "./helpers/location.js";
+import { initGetLocationButton } from "./journey/get-gps-location.js";
 
 console.log('Application Started');
 console.log('Initializing');

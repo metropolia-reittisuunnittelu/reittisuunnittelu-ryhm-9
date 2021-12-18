@@ -11,7 +11,7 @@ async function onGetRoutesButtonClick(event) {
 
     const to = document.getElementById(getRoutesFormIds.to).value;
 
-    console.log('params', { from, to })
+    console.log('params', { from, to });
 
     try {
 
