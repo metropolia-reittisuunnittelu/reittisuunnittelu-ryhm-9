@@ -1,32 +1,52 @@
-import { alert } from '../utilities/alert/alert';
+import { getRoutesFormIds } from "../constants.js";
+import { addPersonIconToMap } from "../map/map-marker.js";
+import { mapInstance } from "../map/map-instance.js";
+import { getNameByCoordinatesEndpoint } from "../endpoints/get-name-by-coordinates.endpoint.js";
 
-//  TODO: needs refactoring
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((showPosition) => {
-            console.log(showPosition)
-            alert(JSON.stringify(showPosition.coords.accuracy, undefined, 3));
+export function getCurrentPosition() {
+    return new Promise((resolve, reject) => {
+        if (!navigator.geolocation) {
+            reject('Geolocation is not supported by this browser');
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition((geoLocationPosition) => {
+
+            resolve(geoLocationPosition);
         }, (err) => {
-            alert(err);
-            console.log(err)
-        }, {});
-    } else {
-        console.log('Geolocation is not supported by this browser');
-    }
+            reject(err);
+        }, {
+            enableHighAccuracy: true
+        });
+    });
 }
 
-function showPosition(position) {
-    console.log(position);
+export function initGetLocationButton() {
+    const getLocationButton = document.getElementById(getRoutesFormIds.getLocationButton);
+
+    if (!getLocationButton) {
+        throw new TypeError(`${ getRoutesFormIds.getLocationButton } is undefined`)
+    }
+
+    getLocationButton.onclick = async () => {
+        if (!navigator.geolocation) {
+            console.log('Geolocation is not supported by this browser');
+            return;
+        }
+
+        const data = await getCurrentPosition();
+
+        addPersonIconToMap([ data.coords.latitude, data.coords.longitude ]);
+
+        mapInstance.setView([ data.coords.latitude, data.coords.longitude ], 18);
+
+        const nameData = await getNameByCoordinatesEndpoint([ data.coords.latitude, data.coords.longitude ]);
+
+        const addressData = nameData.features[0].properties.label;
+
+        const from = document.getElementById(getRoutesFormIds.from);
+
+        from.value = addressData;
+    };
 }
 
-const getLocationButton = document.getElementById('get-location-button');
-console.log(getLocationButton);
-
-getLocationButton.onclick = async () => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        console.log('Geolocation is not supported by this browser');
-    }
-    getLocation();
-};

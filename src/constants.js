@@ -9,6 +9,7 @@ export const mapIds = {
 
 export const getRoutesFormIds = {
     form: 'app-map-search-route-form',
+    getLocationButton: 'get-lcation-button',
     submitButton: 'get-routes-submit-button',
     from: 'get-routes-from-input',
     fromDataList: 'get-routes-from-input-datalist',
