@@ -8,11 +8,8 @@ export const mapIds = {
 }
 
 export const getRoutesFormIds = {
-    form: 'app-map-search-route-form',
+    possibleRoutes: 'possible-routes',
     getLocationButton: 'get-lcation-button',
-    submitButton: 'get-routes-submit-button',
     from: 'get-routes-from-input',
-    fromDataList: 'get-routes-from-input-datalist',
-    to: 'get-routes-to-input',
-    toDataList: 'get-routes-to-input-datalist',
+    to: 'get-routes-to-input'
 };

@@ -1,8 +1,7 @@
 import { initMap } from "./map/map-instance.js";
-import { initGetRoutesForm } from "./journey/get-routes-form.js";
 import { initMapBusStops } from "./journey/map-bus-stops.js";
-import { initAddressAutoCompletion } from "./journey/address-auto-complete.js";
 import { initGetLocationButton } from "./journey/get-gps-location.js";
+import { initMapClick } from "./map/map-click.js";
 
 console.log('Application Started');
 console.log('Initializing');
@@ -14,15 +13,11 @@ initMap();
 //  Initializing Bus stops.
 initMapBusStops();
 
-
-//  Initializing GetRoutes form.
-initGetRoutesForm();
-
-//  Initializing auto completion.
-initAddressAutoCompletion();
-
 //  Initializing location button.
 initGetLocationButton();
+
+//  Initializing map click.
+initMapClick();
 
 console.log('Initialization finished.');
 

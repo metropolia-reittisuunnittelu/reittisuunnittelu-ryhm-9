@@ -34,6 +34,9 @@
 
     <!--    Stylesheet entrypoint    -->
     <link href="./style.css" rel="stylesheet">
+
+    <!--    Polyline extractor for coordinates    -->
+    <script src="https://unpkg.com/polyline@0.2.0/src/polyline.js"></script>
 </head>
 <body>
 
@@ -90,29 +93,26 @@
 <div class="app-map">
     <div class="app-map-map" id="app-map"></div>
 
-    <!--    Route search    -->
+    <!--    Route data    -->
     <div class="app-map-control">
-        <form class="app-map-search-route-form" id="app-map-search-route-form">
-            <div class="text-field">
-                <label for="get-routes-from-input">From: </label>
-                <input id="get-routes-from-input" list="get-routes-from-input-datalist" type="text"/>
-                <datalist id="get-routes-from-input-datalist"></datalist>
+        <div class="app-map-search-route">
+            <div class="data-field">
+                <label>From: </label>
+                <span id="get-routes-from-input"></span>
             </div>
 
-            <div class="text-field">
-                <label for="get-routes-to-input">To: </label>
-                <input id="get-routes-to-input" list="get-routes-to-input-datalist" type="text"/>
-                <datalist id="get-routes-to-input-datalist"></datalist>
+            <div class="data-field">
+                <label>To: </label>
+                <span id="get-routes-to-input"></span>
             </div>
 
             <button class="primary-button" id="get-lcation-button" type="button">
                 <span class="material-icons">share_location</span>
             </button>
+        </div>
+        <div class="app-map-search-possible-routes" id="possible-routes">
 
-            <button class="primary-button" id="get-routes-submit-button" type="submit">
-                <span class="material-icons">search</span>
-            </button>
-        </form>
+        </div>
     </div>
 </div>
 

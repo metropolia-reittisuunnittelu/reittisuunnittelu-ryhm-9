@@ -1,5 +1,5 @@
 import { getRoutesFormIds } from "../constants.js";
-import { addPersonIconToMap } from "../map/map-marker.js";
+import { addStartPointToMap, removeEndPoint, removeStartPoint } from "../map/map-marker.js";
 import { mapInstance } from "../map/map-instance.js";
 import { getNameByCoordinatesEndpoint } from "../endpoints/get-name-by-coordinates.endpoint.js";
 
@@ -41,17 +41,17 @@ export function initGetLocationButton() {
                 return;
             }
 
-            addPersonIconToMap([ data.coords.latitude, data.coords.longitude ]);
+            // addPersonIconToMap([ data.coords.latitude, data.coords.longitude ]);
 
+            removeStartPoint();
+            removeEndPoint();
             mapInstance.setView([ data.coords.latitude, data.coords.longitude ], 18);
 
             const nameData = await getNameByCoordinatesEndpoint([ data.coords.latitude, data.coords.longitude ]);
 
-            const addressData = nameData.features[0].properties.label;
+            const label = nameData.features[0].properties.label;
 
-            const from = document.getElementById(getRoutesFormIds.from);
-
-            from.value = addressData;
+            addStartPointToMap([ data.coords.latitude, data.coords.longitude ], label);
 
         } catch (e) {
             console.log('Error in onClick of: ', getRoutesFormIds.getLocationButton);
