@@ -10,8 +10,10 @@ function getFormattedTime(step) {
 
 function getWalkElement(step) {
     console.log('walk step: ', step);
-    return `<div class="possible-route-step">${ step.mode }
-    <img src="./images/walk.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"></div>`
+    return `<div class="possible-route-step">
+                ${ step.mode }
+                <img src="./images/walk.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"/>
+            </div>`
 }
 
 function getBusElement(step) {
@@ -32,6 +34,7 @@ function getRailElement(step) {
     return `<div class="possible-route-step" style="background-color:indianred;text-align: center">${ step.mode } ${ step.trip.route.shortName}
     <img src="./images/rail.png" alt="rail-logo" style="width:80px"></div>`
 }
+
 function getSubwayElement(step) {
     console.log('subway step: ', step);
     return `<div class="possible-route-step" style="background-color:orange;text-align: center">${ step.mode } ${ step.trip.route.shortName}
