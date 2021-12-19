@@ -1,6 +1,6 @@
 .app-map {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     gap: 1rem;
     padding: 1rem;
@@ -9,7 +9,8 @@
 
 .app-map-map {
     flex: 1;
-    min-width: 450px;
+    min-width: 350px;
+    min-height: 700px;
 }
 
 .app-map-control {
@@ -20,7 +21,7 @@
 
 .app-map-control > .app-map-search-route {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.3rem;
     padding: 1rem;
 }
