@@ -17,18 +17,19 @@ function getBusElement(step) {
 
 function getTramElement(step) {
     console.log('tram step: ', step);
-    return `<div class="possible-route-step-tram" style="background-color:ghostwhite">${ step.mode } ${ step.trip.route.shortName }</div>`
+    return `<div class="possible-route-step-tram" style="background-color:ghostwhite">${ step.mode } ${ step.trip.route.shortName }
+    <img src="./images/ratikka.png" alt="rail-logo" style="width:80px"></div>`
 }
 
 function getRailElement(step) {
     console.log('rail step: ', step);
     return `<div class="possible-route-step" style="background-color:ghostwhite">${ step.mode } ${ step.trip.route.shortName}
-    <img src="./images/rail.png" alt="rail-logo" style="width:80px"></div></div>`
+    <img src="./images/rail.png" alt="rail-logo" style="width:80px"></div>`
 }
 function getSubwayElement(step) {
     console.log('subway step: ', step);
     return `<div class="possible-route-step" style="background-color:mediumpurple">${ step.mode } ${ step.trip.route.shortName}
-    <img src="./images/subway.png" alt="subway-logo" style="margin:10px;width:80px;display:flex"></div></div>`
+    <img src="./images/subway.png" alt="subway-logo" style="margin:10px;width:80px;display:flex"></div>`
 }
 
 export async function drawPossibleRoutes() {

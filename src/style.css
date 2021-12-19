@@ -30,7 +30,10 @@ body, button, input {
 * {
     box-sizing: border-box;
 }
-
+img {
+    width:auto;
+    max-width: 100%;
+}
 .material-icons {
     color: #0078A8;
     display: flex;
