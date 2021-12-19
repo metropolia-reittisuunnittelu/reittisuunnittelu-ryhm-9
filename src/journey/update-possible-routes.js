@@ -10,17 +10,18 @@ function getWalkElement(step) {
 
 function getBusElement(step) {
     console.log('bus step: ', step);
-    return `<div class="possible-route-step">${ step.mode }, ${ step.trip.route.shortName}</div>`
+    return `<div class="possible-route-step">${ step.mode } ${ step.trip.route.shortName}
+            <img src="/images/bus-placeholder.png" alt="bus-logo" style="max-width: 50px"></div>`
 }
 
 function getTramElement(step) {
     console.log('tram step: ', step);
-    return `<div class="possible-route-step">${ step.mode }, ${ step.trip.route.shortName}</div>`
+    return `<div class="possible-route-step">${ step.mode } ${ step.trip.route.shortName}</div>`
 }
 
 function getRailElement(step) {
     console.log('rail step: ', step);
-    return `<div class="possible-route-step">${ step.mode }, ${ step.trip.route.shortName}</div>`
+    return `<div class="possible-route-step">${ step.mode } ${ step.trip.route.shortName}</div>`
 }
 
 export async function drawPossibleRoutes() {
