@@ -117,3 +117,18 @@ img {
     gap: 1rem;
 
 }
+
+.app-article {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.app-article > article {
+    flex: 1;
+    max-width: 1000px;
+    line-height: 2rem;
+
+}
