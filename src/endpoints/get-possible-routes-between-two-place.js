@@ -11,7 +11,7 @@ export async function getPossibleRoutesBetweenTwoPlace([ fromLat, fromLon ], [ t
               plan(
                 from: {lat: ${ fromLat }, lon: ${ fromLon }}
                 to: {lat: ${ toLat }, lon: ${ toLon }}
-                transportModes: [{mode: BUS}, {mode: RAIL}, {mode:TRAM}, {mode:WALK}]
+                transportModes: [{mode: BUS}, {mode: RAIL}, {mode:TRAM}, {mode:WALK}, {mode:SUBWAY}]
                 numItineraries: 3
               ) {
                 itineraries {
