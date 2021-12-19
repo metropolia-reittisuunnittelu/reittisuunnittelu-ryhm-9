@@ -6,29 +6,29 @@ import { savePossibleRoutes, updateMapWithNewRoute } from "../map/map-route.js";
 function getWalkElement(step) {
     console.log('walk step: ', step);
     return `<div class="possible-route-step">${ step.mode }
-    <img src="/images/walk.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"></div>`
+    <img src="./images/walk.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"></div>`
 }
 
 function getBusElement(step) {
     console.log('bus step: ', step);
     return `<div class="possible-route-step" style="background-color:cadetblue;alignment-baseline: center">${ step.mode } ${ step.trip.route.shortName}
-            <img src="/images/bus.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"></div>`
+            <img src="./images/bus.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"></div>`
 }
 
 function getTramElement(step) {
     console.log('tram step: ', step);
-    return `<div class="possible-route-step-tram" style="background-color:ghostwhite">${ step.mode } ${ step.trip.route.shortName}</div>`
+    return `<div class="possible-route-step-tram" style="background-color:ghostwhite">${ step.mode } ${ step.trip.route.shortName }</div>`
 }
 
 function getRailElement(step) {
     console.log('rail step: ', step);
     return `<div class="possible-route-step" style="background-color:ghostwhite">${ step.mode } ${ step.trip.route.shortName}
-    <img src="/images/rail.png" alt="rail-logo" style="width:80px"></div></div>`
+    <img src="./images/rail.png" alt="rail-logo" style="width:80px"></div></div>`
 }
 function getSubwayElement(step) {
     console.log('subway step: ', step);
     return `<div class="possible-route-step" style="background-color:mediumpurple">${ step.mode } ${ step.trip.route.shortName}
-    <img src="/images/subway.png" alt="subway-logo" style="margin:10px;width:80px;display:flex"></div></div>`
+    <img src="./images/subway.png" alt="subway-logo" style="margin:10px;width:80px;display:flex"></div></div>`
 }
 
 export async function drawPossibleRoutes() {
