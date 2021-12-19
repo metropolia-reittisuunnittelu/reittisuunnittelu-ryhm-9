@@ -5,7 +5,8 @@ import { savePossibleRoutes, updateMapWithNewRoute } from "../map/map-route.js";
 
 function getWalkElement(step) {
     console.log('walk step: ', step);
-    return `<div class="possible-route-step">${ step.mode }</div>`
+    return `<div class="possible-route-step">${ step.mode }
+    <img src="/images/walk.png" alt="bus-logo" style="margin:10px;width:80px;display:flex;"></div>`
 }
 
 function getBusElement(step) {
