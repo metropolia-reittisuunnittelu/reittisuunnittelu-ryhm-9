@@ -30,10 +30,12 @@ body, button, input {
 * {
     box-sizing: border-box;
 }
+
 img {
-    width:auto;
+    width: auto;
     max-width: 100%;
 }
+
 .material-icons {
     color: #0078A8;
     display: flex;
@@ -97,11 +99,16 @@ img {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     padding: 1rem;
-
+    cursor: pointer;
 }
+
+.possible-route-wrap:hover {
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
 
 .possible-route-step {
     border: 1px solid rgba(0, 0, 0, 0.6);

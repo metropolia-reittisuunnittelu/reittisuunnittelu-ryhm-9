@@ -6,8 +6,9 @@
     flex-direction: row;
     gap: 0.5rem;
     position: relative;
-    width: 300px;
     align-items: center;
+    height: 200px;
+    flex: 1;
 }
 
 .data-field > span {
